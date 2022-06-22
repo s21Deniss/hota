@@ -3,7 +3,7 @@
 Table of content
 [[toc]]
 
-## Preperation
+## Preparation
 
 #### Items:
 
@@ -22,7 +22,7 @@ time stop
 
 #### Notes
 
-Most of the mechanics will heppen at human phase
+Most of the mechanics will happen at human phase
 
 Purple stay inside telegraphs if fighting purple boi
 
