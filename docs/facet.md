@@ -1,0 +1,569 @@
+---
+layout: home
+title: Ability stone calculator
+
+hero:
+  name: Casino Stone calculator
+  text: " " 
+  tagline: " "
+  actions:
+    - theme: alt
+      text: Source code for casino stone calculator
+      link: https://github.com/nwtnni/facet
+---
+
+<!-- <script setup>
+import { useData } from 'vitepress'
+
+const { page } = useData()
+</script>
+
+<pre>{{ page }}</pre> -->
+
+<script setup>
+import * as facet from "./public/facet.js";
+
+facet.default().then(() => {
+    const instructions = document.getElementById("instructions")
+    const rarity = document.getElementById("rarity");
+    const target = document.querySelectorAll(".target");
+    const chance = document.getElementById("chance");
+    const precision = document.getElementById("precision");
+    const start = document.getElementById("start");
+    const grid = document.getElementById("grid");
+    const undo = [];
+
+    const facetButtons = [];
+    const successButtons = [];
+    const failureButtons = [];
+
+    const stone = [[], [], []];
+    const probability = [null, null, null];
+    let faceting = false;
+
+    function getRarity() {
+    return parseInt(rarity.value);
+    }
+
+    // Get next slot to roll in row.
+    function getCurrent(row) {
+    if (stone[row].length >= getRarity()) {
+        return null;
+    }
+
+    return grid.children[row * (getRarity() + 1) + stone[row].length];
+    }
+
+    // Get `div` containing action buttons (facet, success, failure) in row.
+    function getAction(row) {
+    if (stone[row].length >= getRarity()) {
+        return null;
+    }
+
+    return grid.children[row * (getRarity() + 1) + getRarity()];
+    }
+
+    // Return an ordinal within [0, 1, ..., 5] for compatibility with the Rust ABI.
+    function getChance() {
+    return Math.floor((parseInt(chance.value) - 25) / 10);
+    }
+
+    function getPrecision() {
+    return parseInt(precision.value);
+    }
+
+    function getStart() {
+    return start.textContent === "Stop";
+    }
+
+    function getTarget(row) {
+    return parseInt(target[row].value);
+    }
+
+    // Ensure chance is within [25, 35, ..., 75].
+    function clampChance(value) {
+    const clamped = Math.min(75, Math.max(25, value));
+    return Math.floor((clamped - 25) / 10) * 10 + 25;
+    }
+
+    // Ensure target is within [0, 1, ... rarity].
+    function clampTarget(value) {
+    return Math.max(0, Math.min(getRarity(), value));
+    }
+
+    function clampPrecision(value) {
+    return Math.max(0, Math.min(10, value));
+    }
+
+    function resetButtons() {
+    facetButtons.length = 0;
+    successButtons.length = 0;
+    failureButtons.length = 0;
+    }
+
+    function resetChance() {
+    chance.value = 75;
+    chance.previous = 75;
+    }
+
+    function resetTarget() {
+    for (let row = 0; row < 3; row++) {
+        target[row].value = clampTarget(parseInt(target[row].value));
+        target[row].previous = target[row].value;
+    }
+    }
+
+    function resetProbability() {
+    for (let row = 0; row < 3; row++) {
+        probability[row] = null;
+        if (facetButtons[row]) {
+        facetButtons[row].textContent = "🔨";
+        facetButtons[row].classList.remove("button-facet-max");
+        }
+    }
+    }
+
+    function resetStart() {
+    start.textContent = "Start";
+    }
+
+    function resetStone() {
+    for (let row of stone) {
+        row.length = 0;
+    }
+    }
+
+    function resetUndo() {
+    undo.length = 0;
+    }
+
+    // On a successful roll, the chance decreases by 10% to a minimum of 25%.
+    // On a failed roll, the chance increases by 10% to a maximum of 75%.
+    function updateChance(success) {
+    if (success) {
+        chance.value = Math.max(25, parseInt(chance.value) - 10);
+    } else {
+        chance.value = Math.min(75, parseInt(chance.value) + 10);
+    }
+    }
+
+    function updateUndo(row) {
+    undo.push([
+        [target[0].previous, target[1].previous, target[2].previous],
+        chance.previous,
+        row,
+        [...probability],
+    ]);
+
+    chance.previous = chance.value;
+    for (let _row = 0; _row < 3; _row++) {
+        target[_row].previous = target[_row].value;
+    }
+    }
+
+    function computeProbability() {
+    if (!getStart()) {
+        return;
+    }
+
+    const _stone = new facet.Stone(
+        getChance(),
+        stone[0].reduce((a, b) => a + b, 0),
+        stone[1].reduce((a, b) => a + b, 0),
+        stone[2].reduce((a, b) => a + b, 0),
+        stone[0].length,
+        stone[1].length,
+        stone[2].length,
+    );
+
+    const _probability = facet.expectimax_wasm(
+        _stone,
+        getTarget(0),
+        getTarget(1),
+        getTarget(2),
+        getRarity(),
+        getRarity(),
+        getRarity(),
+        12,
+    );
+
+    for (let row = 0; row < 3; row++) {
+        probability[row] = _probability[row];
+    }
+    }
+
+    function updateProbability() {
+    if (!getStart()) {
+        return;
+    }
+
+    let max = probability.reduce((a, b) => Math.max(a, b));
+
+    for (let row = 0; row < 3; row++) {
+        const percentage = probability[row] * 100.0;
+        facetButtons[row].textContent = "🔨 (" + percentage.toFixed(getPrecision()) + "%)";
+        if (probability[row] === max && getAction(row)) {
+        facetButtons[row].classList.add("button-facet-max");
+        max = null;
+        } else {
+        facetButtons[row].classList.remove("button-facet-max");
+        }
+    }
+    }
+
+    function onFacet(row) {
+    const action = getAction(row);
+    action.appendChild(successButtons[row]);
+    action.appendChild(failureButtons[row]);
+    faceting = true;
+
+    for (let any = 0; any < 3; any++) {
+        if (getAction(any)) {
+        getAction(any).removeChild(facetButtons[any]);
+        }
+    }
+    }
+
+    function onRecord(row, success) {
+    const action = getAction(row);
+    action.removeChild(successButtons[row]);
+    action.removeChild(failureButtons[row]);
+    faceting = false;
+
+    const current = getCurrent(row);
+
+    if (success) {
+        current.classList.add("grid-success");
+        current.textContent = "◆";
+    } else {
+        current.classList.add("grid-failure");
+    }
+
+    stone[row].push(success);
+    updateChance(success);
+    updateUndo(row);
+    computeProbability();
+    updateProbability();
+
+    for (let any = 0; any < 3; any++) {
+        if (getAction(any)) {
+        getAction(any).appendChild(facetButtons[any]);
+        }
+    }
+    }
+
+    function onUndo() {
+    if (undo.length === 0) {
+        return;
+    }
+
+    const [_target, _chance, row, _probability] = undo.pop();
+
+    if (row !== null) {
+        stone[row].pop();
+        const current = getCurrent(row);
+        current.textContent = "◇";
+        current.classList.remove("grid-success");
+        current.classList.remove("grid-failure");
+        if (!faceting) {
+        getAction(row).appendChild(facetButtons[row]);
+        }
+    }
+
+    chance.value = _chance;
+    chance.previous = _chance;
+
+    for (let row = 0; row < 3; row++) {
+        target[row].value = _target[row];
+        target[row].previous = _target[row];
+    }
+
+    if (_probability.every(defined => defined)) {
+        for (let row = 0; row < 3; row++) {
+        probability[row] = _probability[row];
+        }
+    } else {
+        computeProbability();
+    }
+
+    updateProbability();
+    }
+
+    function resetGrid() {
+    resetButtons();
+    resetChance();
+    resetProbability();
+    resetStart();
+    resetStone();
+    resetTarget();
+    resetUndo();
+
+    grid.textContent = "";
+    grid.className = "grid-rows-" + getRarity();
+
+    for (let row = 0; row < 3; row++) {
+        for (let col = 0; col < getRarity(); col++) {
+        const div = document.createElement("div");
+        div.className = "grid-col";
+        div.classList.add("grid-row-" + row);
+        div.textContent = "◇";
+
+        grid.appendChild(div);
+        }
+
+        const action = document.createElement("div");
+        action.classList.add("grid-row-" + row);
+        action.classList.add("grid-action");
+
+        const facet = document.createElement("button");
+        facet.textContent = "🔨";
+        facet.classList.add("button-facet", "bg-gray-300", "hover:bg-gray-400", "text-gray-800", "font-bold", "py-2", "px-4", "rounded-r", "rounded-l");
+        // facet.classList.add("button-action");
+        facet.onclick = () => onFacet(row);
+        facetButtons.push(facet);
+        action.appendChild(facet);
+
+        const success = document.createElement("button");
+        success.textContent = "◆";
+        success.classList.add("bg-gray-300", "hover:bg-gray-400", "text-gray-800", "font-bold", "py-2", "px-4", "rounded-r", "rounded-l", "text-green-600");
+        // success.classList.add("button-action");
+        success.onclick = () => onRecord(row, true);
+        successButtons.push(success);
+
+        const failure = document.createElement("button");
+        failure.textContent = "◇";
+        failure.classList.add("bg-gray-300", "hover:bg-gray-400", "text-gray-800", "font-bold", "py-2", "px-4", "rounded-r", "rounded-l");
+        // failure.classList.add("button-action");
+        failure.onclick = () => onRecord(row, false);
+        failureButtons.push(failure);
+
+        grid.appendChild(action);
+    }
+    }
+
+    start.onclick = () => {
+    start.textContent = (start.textContent === "Start") ? "Stop" : "Start";
+    if (getStart()) {
+        computeProbability();
+        updateProbability();
+    } else {
+        resetProbability();
+    }
+    };
+
+    chance.previous = 75;
+    chance.onchange = change => {
+    const previous = parseInt(chance.previous);
+    chance.value = clampChance(parseInt(chance.value));
+
+    if (previous === chance.value) {
+        return;
+    }
+
+    updateUndo(null);
+    computeProbability();
+    updateProbability();
+    };
+
+    for (let row = 0; row < 3; row++) {
+    target[row].previous = (row === 2) ? 4 : 7;
+    target[row].onchange = () => {
+        const previous = parseInt(target[row].previous);
+        target[row].value = clampTarget(parseInt(target[row].value));
+
+        if (previous === target[row].value) {
+        return;
+        }
+
+        updateUndo(null);
+        computeProbability();
+        updateProbability();
+    }
+    }
+
+    precision.onchange = () => {
+    precision.value = clampPrecision(getPrecision());
+    updateProbability();
+    }
+
+    rarity.previous = rarity.value;
+    rarity.onchange = () => {
+    if (stone.every(line => line.length === 0) || confirm("This will clear the grid. Are you sure you want to reset?")) {
+        rarity.previous = rarity.value;
+        resetGrid();
+    } else {
+        rarity.value = rarity.previous;
+    }
+    };
+
+    document.getElementById("undo").onclick = () => onUndo();
+    document.getElementById("reset").onclick = rarity.onchange;
+
+    resetGrid();
+});
+</script>
+
+
+  <style lang="css">
+
+    #grid {
+      display: grid;
+    }
+
+    /* #grid.rarity-6 {
+      grid-template-columns: repeat(6, 50px) 260px;
+    }
+
+    #grid.rarity-8 {
+      grid-template-columns: repeat(8, 50px) 260px;
+    }
+
+    #grid.rarity-9 {
+      grid-template-columns: repeat(9, 50px) 260px;
+    }
+
+    #grid.rarity-10 {
+      grid-template-columns: repeat(10, 50px) 260px;
+    } */
+
+    .grid-row-0 {
+      grid-row-start: 1;
+    }
+
+    .grid-row-1 {
+      grid-row-start: 2;
+    }
+
+    .grid-row-2 {
+      grid-row-start: 3;
+    }
+
+    .grid-col {
+      color: Gainsboro;
+      font-size: 50px;
+    }
+
+    .grid-row-0.grid-success {
+      color: rgb(87, 156, 201);
+    }
+
+    .grid-row-1.grid-success {
+      color: rgb(87, 156, 201);
+    }
+
+    .grid-row-2.grid-success {
+      color: rgb(214, 69, 59);
+    }
+
+    .grid-row-0.grid-failure {
+      color: rgb(87, 156, 201);
+    }
+
+    .grid-row-1.grid-failure {
+      color: rgb(87, 156, 201);
+    }
+
+    .grid-row-2.grid-failure {
+      color: rgb(214, 69, 59);
+    }
+
+
+    .grid-row-0 .button-action {
+      color: rgb(87, 156, 201);
+    }
+
+    .grid-row-1 .button-action {
+      color: rgb(87, 156, 201);
+    }
+
+    .grid-row-2 .button-action {
+      color: rgb(214, 69, 59);
+      ;
+    }
+
+
+  </style>
+
+  <div class="flex justify-left antialiased text-teal-500">
+    <!-- <label for="rarity">Ability stone rarity:</label>
+    <select id="rarity">
+      <option value="6">Rare (6)</option>
+      <option value="8">Epic (8)</option>
+      <option value="9">Legendary (9)</option>
+      <option value="10" selected="selected">Relic (10)</option>
+    </select> -->
+
+
+  <div class="mb-3 xl:w-96">
+  <label for="rarity">Ability stone rarity:</label>
+    <select id="rarity" class="form-select appearance-none
+      block
+      w-full
+      px-3
+      py-1.5
+      text-base
+      font-normal
+      text-gray-700
+      bg-white bg-clip-padding bg-no-repeat
+      border border-solid border-gray-300
+      rounded
+      transition
+      ease-in-out
+      m-0
+      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+      <option value="6">Rare (6)</option>
+      <option value="8">Epic (8)</option>
+      <option value="9">Legendary (9)</option>
+      <option value="10" selected="selected">Relic (10)</option>
+    </select>
+  </div>
+</div>
+
+  <div class="parameter">
+    <label for="target-line-0">Target minimum for first line:</label>
+    <input type="number" class="target" id="target-line-0" min="0" max="10" value="7">
+  </div>
+
+  <div class="parameter">
+    <label for="target-line-1">Target minimum for second line:</label>
+    <input type="number" class="target" id="target-line-1" min="0" max="10" value="7">
+  </div>
+
+  <div class="parameter">
+    <label for="target-line-2">Target maximum for third line:</label>
+    <input type="number" class="target" id="target-line-2" min="0" max="10" value="4">
+  </div>
+
+  <div class="parameter">
+    <label for="chance">Current chance of success:</label>
+    <input type="number" id="chance" min="25" max="75" step="10" value="75">
+  </div>
+
+  <div class="parameter">
+    <label for="chance">Probability precision (decimal places to display):</label>
+    <input type="number" id="precision" min="0" max="10" step="1" value="2">
+  </div>
+
+<div class="grid justify-items-left items-center col-span-10 ">
+  <div id="grid" class="grid-rows-3"></div>
+</div>
+
+
+
+<!-- <button class="bg-sky-600 hover:bg-sky-700 ...">
+  Save changes
+</button> -->
+
+<div class="inline-flex">
+  <button id="start"  class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
+    Start
+  </button>
+  <button id="undo"  class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4">
+    Undo
+  </button>
+    <button id="reset" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r">
+    Reset
+  </button>
+</div>
+
+

@@ -3,34 +3,6 @@ export default {
   description: 'lost ark notes',
   themeConfig: {
     nav: nav(),
-    // nav: [
-    //   { text: 'Guide', link: '/guide' },
-    //   {
-    //     text: 'Dropdown Menu',
-    //     items: [
-    //       {
-    //         // Title for the section.
-    //         text: 'Section A Title',
-    //         items: [
-    //           { text: 'Section A Item A', link: '...' },
-    //           { text: 'Section B Item B', link: '...' }
-    //         ]
-    //       }
-    //     ]
-    //   },
-    //   {
-    //     text: 'Dropdown Menu',
-    //     items: [
-    //       {
-    //         // You may also omit the title.
-    //         items: [
-    //           { text: 'Section A Item A', link: '...' },
-    //           { text: 'Section B Item B', link: '...' }
-    //         ]
-    //       }
-    //     ]
-    //   }
-    // ],
 
     // socials
     socialLinks: [
@@ -83,7 +55,6 @@ export default {
       pattern: 'https://github.com/s21Deniss/lostarkNotes/edit/main/docs/:path',
       text: 'Edit this page on GitHub'
     }
-
   }
 }
 

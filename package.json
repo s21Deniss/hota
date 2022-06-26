@@ -8,8 +8,18 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
+    "@tailwindcss/postcss7-compat": "^2.0.4",
+    "autoprefixer": "^9",
+    "postcss": "^7",
+    "tailwindcss": "^3.1.4",
     "vitepress": "^1.0.0-alpha.2",
     "vue": "^3.2.37"
+  },
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
   },
   "scripts": {
     "docs:dev": "vitepress dev docs",
