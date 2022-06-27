@@ -4,7 +4,7 @@ title: Ability stone calculator
 
 hero:
   name: Casino Stone calculator
-  text: " " 
+  text: " "
   tagline: " "
   actions:
     - theme: alt
@@ -403,7 +403,6 @@ facet.default().then(() => {
 });
 </script>
 
-
   <style lang="css">
 
     #grid {
@@ -493,7 +492,6 @@ facet.default().then(() => {
       <option value="10" selected="selected">Relic (10)</option>
     </select> -->
 
-
   <div class="mb-3 xl:w-96">
   <label for="rarity">Ability stone rarity:</label>
     <select id="rarity" class="form-select appearance-none
@@ -548,8 +546,6 @@ facet.default().then(() => {
   <div id="grid" class="grid-rows-3"></div>
 </div>
 
-
-
 <!-- <button class="bg-sky-600 hover:bg-sky-700 ...">
   Save changes
 </button> -->
@@ -566,4 +562,60 @@ facet.default().then(() => {
   </button>
 </div>
 
+<br>
 
+<!-- <div class="grid justify-items-left items-center col-span-10">
+  <div id="grid" class="grid-rows-10">
+    <div class="grid-col grid-row-1">◇</div>
+    <div class="grid-col grid-row-1">◇</div>
+    <div class="grid-col grid-row-1">◇</div>
+    <div class="grid-col grid-row-1">◇</div>
+    <div class="grid-col grid-row-1">◇</div>
+    <div class="grid-col grid-row-1">◇</div>
+    <div class="grid-col grid-row-1">◇</div>
+    <div class="grid-col grid-row-1">◇</div>
+    <div class="grid-col grid-row-1">◇</div>
+    <div class="grid-col grid-row-1">◇</div>
+    <div class="grid-row-1 grid-action">
+      <button
+        class="button-facet bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r rounded-l"
+      >
+        🔨
+      </button>
+    </div>
+    <div class="grid-col grid-row-2">◇</div>
+    <div class="grid-col grid-row-2">◇</div>
+    <div class="grid-col grid-row-2">◇</div>
+    <div class="grid-col grid-row-2">◇</div>
+    <div class="grid-col grid-row-2">◇</div>
+    <div class="grid-col grid-row-2">◇</div>
+    <div class="grid-col grid-row-2">◇</div>
+    <div class="grid-col grid-row-2">◇</div>
+    <div class="grid-col grid-row-2">◇</div>
+    <div class="grid-col grid-row-2">◇</div>
+    <div class="grid-row-2 grid-action">
+      <button
+        class="button-facet bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r rounded-l"
+      >
+        🔨
+      </button>
+    </div>
+    <div class="grid-col grid-row-3">◇</div>
+    <div class="grid-col grid-row-3">◇</div>
+    <div class="grid-col grid-row-3">◇</div>
+    <div class="grid-col grid-row-3">◇</div>
+    <div class="grid-col grid-row-3">◇</div>
+    <div class="grid-col grid-row-3">◇</div>
+    <div class="grid-col grid-row-3">◇</div>
+    <div class="grid-col grid-row-3">◇</div>
+    <div class="grid-col grid-row-3">◇</div>
+    <div class="grid-col grid-row-3">◇</div>
+    <div class="grid-row-3 grid-action">
+      <button
+        class="button-facet bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r rounded-l"
+      >
+        🔨
+      </button>
+    </div>
+  </div>
+</div> -->
