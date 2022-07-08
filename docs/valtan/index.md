@@ -49,13 +49,13 @@ Seperate wolfs so they don't have damage reduction buff
 
 People with gold buff, fight invader wolf
 
-## 30 HP First Orb Phase
+## 30 HP Orb Phase
 
 Stay in predetermined positions and pick your orb in order
 
 Stagger the boss
 
-Can use wei to help our
+Can use wei to help out
 
 ## 25 HP Double wolfs
 
@@ -63,13 +63,13 @@ Seperate wolfs so they don't have damage reduction buff
 
 People with gold buff, fight invader wolf
 
-## 15 HP Second Orb Phase
+## 15 HP Orb Phase
 
 Stay in predetermined positions and pick your orb in order
 
 Stagger the boss
 
-Can use wei to help our
+Can use wei to help out
 
 ## 15 HP after
 
