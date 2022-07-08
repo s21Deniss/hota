@@ -6,4 +6,4 @@
 
 ## Run locally
 
-` yarn docs:dev`
+` npm run docs:dev`
