@@ -61,6 +61,6 @@ export default {
 
 function nav() {
   return [
-    { text: 'Welcom Lost ark enjoyers', link: '#' },
+    { text: 'Welcome Lost ark enjoyers', link: '#' },
   ]
 }

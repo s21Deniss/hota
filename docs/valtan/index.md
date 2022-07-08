@@ -45,7 +45,7 @@ Just do damage, and don't get hit
 
 ## 40 HP Double wolfs
 
-Seperate wolfs so they dont have damage reduction buff
+Seperate wolfs so they don't have damage reduction buff
 
 People with gold buff, fight invader wolf
 
@@ -59,7 +59,7 @@ Can use wei to help our
 
 ## 25 HP Double wolfs
 
-Seperate wolfs so they dont have damage reduction buff
+Seperate wolfs so they don't have damage reduction buff
 
 People with gold buff, fight invader wolf
 
