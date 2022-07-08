@@ -6,7 +6,7 @@ export default {
 
     // socials
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
+      { icon: 'github', link: 'https://github.com/s21Deniss/lostarkNotes' },
     ],
 
     //sidebar
