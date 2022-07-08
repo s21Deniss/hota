@@ -7,7 +7,3 @@
 ## Run locally
 
 ` yarn docs:dev`
-
-## Credits
-
-Ability Stone calculator -> https://github.com/nwtnni/facet
