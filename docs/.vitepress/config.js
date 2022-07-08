@@ -1,6 +1,7 @@
 export default {
   title: 'Lost Ark notes',
   description: 'lost ark notes',
+  outDir: '../public',
   themeConfig: {
     nav: nav(),
 
