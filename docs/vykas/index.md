@@ -1,4 +1,8 @@
-# Gate 1
+---
+title: Gate 1 Vykas
+---
+
+# Gate 1 Vykas `--Hard Mode--`
 
 Table of content
 [[toc]]
@@ -7,14 +11,14 @@ Table of content
 
 #### Items:
 
-hp potion
+HP potion
 dark grenade
 stagger grenade
 time stop
 
 #### Ester
 
-1st use Nineveh on boss with more hp
+1st use Nineveh on boss with more HP
 
 #### Positions
 
@@ -28,17 +32,15 @@ Purple stay inside telegraphs if fighting purple boi
 
 ## Fight start
 
-Push dps until 1st split at [55 hp bar](#_55-hp)
+Push dps until 1st split at [55 HP bar](#_50-HP-colour-orbs)
 
-## 55 hp
+## 55 HP **First split**
 
 Teams will split into 2 groups
 
 Human and Demon
 
-## ~ 50 hp
-
-#### Orb phase
+## 50 HP **Colour Orbs**
 
 - go to the middle of arena and stay inside white circle
 
@@ -55,36 +57,34 @@ Human and Demon
   )
   </span>
 
-## ~ 35 hp
-
-#### stagger + memory game
+## 35 HP **Stagger + memory game**
 
 - stay in positions
   - (1/7 black orb)
   - (5/11 blue orb)
   - can swap 11 -> 1 or 5 -> 7
 
-## 30 hp
+Tell other team where is the safe spot (in/out)
 
-#### Second split of the fight
+## 30 HP **Second split of the fight**
 
 - wait for explosion before going in
 
-## 25 hp
+## 25 HP **White safe spot**
 
-#### white safe spot at 12/3/6/9 o'clock
+White safe spot at 12/3/6/9 o'clock
 
 - human group should tell demon team where white circle is located, demon team stays in that circle
 
-## 13 hp
-
-#### stagger + memory game + tell other team wipe pattern (in/out)
+## 13 HP **Stagger + memory game**
 
 - stay in positions
   - (1/7 black orb)
   - (5/11 blue orb)
   - can swap 11 -> 1 or 5 -> 7
 
-## 5 hp
+Tell other team where is the safe spot (in/out)
 
-At point just burn the boss the 1hp if your boss is dead pass raid lead to other party
+## 5  HP **DPS check**
+
+At point just burn the boss the 1HP if your boss is dead pass raid lead to other party

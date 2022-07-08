@@ -20,15 +20,14 @@ export default {
       //     { text: 'Gate 3', link: '/vykas/gate3' },
       //   ]
       // },
-      // {
-      //   text: 'Valtan',
-      //   collapsible: true,
-      //   items: [
-      //     { text: 'Gate 1', link: '/vykas/' },
-      //     { text: 'Gate 2', link: '/vykas/gate2' },
-      //     { text: 'Gate 3', link: '/vykas/gate3' },
-      //   ]
-      // },
+      {
+        text: 'Valtan',
+        collapsible: true,
+        items: [
+          { text: 'Gate 1', link: '/valtan/' },
+          { text: 'Gate 2', link: '/valtan/gate2' },
+        ]
+      },
       {
         text: 'Vykas',
         collapsible: true,

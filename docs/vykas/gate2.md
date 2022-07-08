@@ -1,4 +1,8 @@
-# Gate 2
+---
+title: Gate 2 Vykas
+---
+
+# Gate 2 Vykas `--Hard Mode--`
 
 Table of content
 [[toc]]
@@ -7,7 +11,7 @@ Table of content
 
 #### Items:
 
-hp potion
+HP potion
 dark grenade
 stagger grenade
 time stop
@@ -22,7 +26,7 @@ This gate requires 2 predetermined position
 
 ##### Position 1
 
-> This position is for wipe mechanic [#1 at 120 hp mark](#_120-hp)
+> This position is for wipe mechanic [#1 at 120 HP mark](#_120-HP)
 
 3/7/1 o'clock
 
@@ -30,7 +34,7 @@ rest make a cross in the middle
 
 ##### Position 2
 
-> This position is for wipe mechanic [#2 at 65 hp mark](#_65-hp)
+> This position is for wipe mechanic [#2 at 65 HP mark](#_65-HP)
 
 5 o'clock - 2 people go here (type in chat 5-1/5-2)
 
@@ -42,9 +46,7 @@ rest make a cross in the middle
 
 #### Notes
 
-## 120 hp
-
-#### Folding wings
+## 120 HP **Folding wings**
 
 **Clones will spawn at 3/7/1 o'clock vykas will then proceed to jump on one of them in order, people outside the range will die. This can be solved with dead people in party**
 
@@ -60,9 +62,7 @@ Note: you can only take 1 debuff, you will die if you take 2
 
 Now you should run to the clones in order above
 
-## 65 hp
-
-#### Red/Black orbs memory game
+## 65 HP **Red/Black orbs memory game**
 
 **Clones will spawn at positions, sending black orbs to Vykas players have to block said black orbs **
 Go to your position, 7-3 and 11-3 be ready to move around
