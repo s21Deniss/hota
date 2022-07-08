@@ -39,11 +39,11 @@ Use corrosive bomb when he start charge
 
 Use destruction bombs + skills when he gets stunned
 
-## 130 HP Wipe Pattern star pizza
+## 130 HP Star pizza wipe pattern
 
 Use ester Balthorr to cheese this mechanic
 
-## 110 HP Pillars (big arena)
+## 110 HP Pillars
 
 Selected player must kite huge red pizza between 2 pillars and just away behind the pillar at the last moment when pizza stops moving
 
@@ -69,7 +69,7 @@ Pillar mechanic will happen again, but with only middle of the arena left
 
 Use ester Balthorr, to cheese this mechanic
 
-## 40 HP Ghost Phase
+## 40  HP Ghost Phase
 
 Valtan will have damage reduction buff, counter side cows to reduce
 
