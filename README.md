@@ -1,6 +1,6 @@
 # Repository for lostark.s21.dev
 
-Personal use
+Hosted version https://lostark.s21.dev/
 
 ## Build locally
 
