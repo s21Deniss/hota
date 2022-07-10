@@ -111,9 +111,9 @@ _Currently missing: Drops of Ether - Strength orb_
 
 `Beast Demon set` <span class="legendary-text text-08">Legendary Set</span>
 
-- 2set 10% (A)
-- 4set 20% (A) (Overwrites 2set effect)
-- 6set 40% (A) (Overwrites 4set effect)
+- 2set 10% (`Additive`)
+- 4set 20% (`Additive`) (Overwrites 2set effect)
+- 6set 40% (`Additive`) (Overwrites 4set effect)
 
 `Total` 40%
 
