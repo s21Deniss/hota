@@ -15,12 +15,15 @@
 
 import './tailwind.postcss'
 import DefaultTheme from 'vitepress/theme'
+import Fn from './components/fn.vue'
+import VPSocialLink from 'vitepress/client/theme-default/components/VPSocialLink.vue'
 import './custom.css'
 
 export default {
   ...DefaultTheme,
   enhanceApp({ app }) {
     // register global components
-    app.component('MyGlobalComponent', /* ... */)
+    app.component('VPSocialLink', VPSocialLink),
+    app.component('Fn', Fn)
   }
 }

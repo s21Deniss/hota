@@ -1,9 +1,11 @@
 export default {
   title: 'Lost Ark notes',
   description: 'lost ark notes',
+  lang: 'en-US',
+  lastUpdated: true,
   themeConfig: {
     nav: nav(),
-
+    lastUpdatedText: 'Updated Date',
     // socials
     socialLinks: [
       { icon: 'github', link: 'https://github.com/s21Deniss/lostarkNotes' },
@@ -38,13 +40,22 @@ export default {
         ]
       },
       {
-        text: 'Tool & Resources',
+        text: 'Other',
+        collapsible: true,
+        items: [
+          { text: 'Damage Multipliers table', link: 'other/damageMultipliers' },
+          { text: 'Relic set converting', link: 'other/relicsets' },
+        ]
+      },
+      {
+        text: '3rd Party Tools & Resources',
         collapsible: true,
         items: [
           { text: 'Merchants tracker', link: 'https://lostmerchants.com/' },
           { text: 'Casino stone calculator', link: 'https://lostark.meta-game.gg/ability-stone-calculator' },
           { text: 'KR Ladder', link: 'https://loawa.com/rank' },
           { text: 'Daily activity tracker', link: 'https://ark.bynn.kr/home' },
+          { text: 'Vykas boomer test practice', link: 'https://marsunpaisti.github.io/lostarktypingpractice/' },
         ]
       }
     ],

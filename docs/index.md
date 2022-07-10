@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: Lost Ark Notes
-  text: Check sidebar for what you need
+  text: Random Lost Ark info
   tagline: I made this for personal use
   actions:
     - theme: brand
@@ -12,8 +12,6 @@ hero:
     - theme: alt
       text: Source code
       link: https://github.com/s21Deniss/lostarkNotes
-
-
 # features:
 #   - icon: ⚡️
 #     title: Vite, The DX that can't be beat
@@ -25,6 +23,7 @@ hero:
 #     title: Simple and minimal, always
 #     details: Lorem ipsum...
 ---
+
 <!-- # Here are some notes for Lost Ark
 
 ## Check side bar
