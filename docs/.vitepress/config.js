@@ -54,6 +54,7 @@ export default {
           { text: 'Merchants tracker', link: 'https://lostmerchants.com/' },
           { text: 'Casino stone calculator', link: 'https://lostark.meta-game.gg/ability-stone-calculator' },
           { text: 'KR Ladder', link: 'https://loawa.com/rank' },
+          { text: 'KR Calculator', link: 'https://loa.icepeng.com/' },
           { text: 'Daily activity tracker', link: 'https://ark.bynn.kr/home' },
           { text: 'Vykas boomer test practice', link: 'https://marsunpaisti.github.io/lostarktypingpractice/' },
         ]
