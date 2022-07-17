@@ -16,6 +16,7 @@
 import './tailwind.postcss'
 import DefaultTheme from 'vitepress/theme'
 import Fn from './components/fn.vue'
+import dmgCalc from './components/dmgCalc.vue'
 import VPSocialLink from 'vitepress/client/theme-default/components/VPSocialLink.vue'
 import './custom.css'
 
@@ -24,6 +25,7 @@ export default {
   enhanceApp({ app }) {
     // register global components
     app.component('VPSocialLink', VPSocialLink),
-    app.component('Fn', Fn)
+    app.component('Fn', Fn),
+    app.component('dmgCalc', dmgCalc)
   }
 }

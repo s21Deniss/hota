@@ -8,34 +8,40 @@ lang: en-US
   height: 27px;
 }
 
+table {}
+
 </style>
 
 # Damage multipliers
 
 _Currently missing: Drops of Ether - Strength orb_
 
+_Damage formula_
+
+<em class="text-08">Attack Power \* [additive attack power engravings] \* [multiplicative engravings] \* [external damage bonuses] \* [tripods]</em>
+
 [[toc]]
 
 ## Engravings
 
-| Engraving         | Multiplier type |
-| ----------------- | :-------------: |
-| Grudge            | Multiplicative  |
-| Ambush Master     | Multiplicative  |
-| Raid Captain      | Multiplicative  |
-| Barricade         | Multiplicative  |
-| Stabilized Status | Multiplicative  |
-| Hit Master        | Multiplicative  |
-| Master Brawler    | Multiplicative  |
-| Super Charge      | Multiplicative  |
-| Disrespect        | Multiplicative  |
-| Master's Tenacity | Multiplicative  |
-| All-out Attack    | Multiplicative  |
-| Sight Focus       | Multiplicative  |
-| Propulsion        | Multiplicative  |
-| Adrenaline        |    Additive     |
-| Cursed doll       |    Additive     |
-| Mass Increase     |    Additive     |
+| Engraving         | Multiplier type | Inc. % |
+| ----------------- | :-------------: | ------ |
+| Grudge            | Multiplicative  | 20%    |
+| Ambush Master     | Multiplicative  | 25%    |
+| Raid Captain      | Multiplicative  | 18%    |
+| Barricade         | Multiplicative  | 16%    |
+| Stabilized Status | Multiplicative  | 16%    |
+| Hit Master        | Multiplicative  | 16%    |
+| Master Brawler    | Multiplicative  | 25%    |
+| Super Charge      | Multiplicative  | 20%    |
+| Disrespect        | Multiplicative  | 36%    |
+| Master's Tenacity | Multiplicative  | 16%    |
+| All-out Attack    | Multiplicative  | 20%    |
+| Sight Focus       | Multiplicative  | 25%    |
+| Propulsion        | Multiplicative  | 16%    |
+| Adrenaline        |    Additive     | 6%     |
+| Cursed doll       |    Additive     | 16%    |
+| Mass Increase     |    Additive     | 18%    |
 
 ## Other
 
@@ -118,6 +124,12 @@ _Currently missing: Drops of Ether - Strength orb_
 `Total` 40%
 
 ---
+
+<!-- ## Calculator
+
+<em class="text-08">Attack Power \* [additive attack power engravings] \* [multiplicative engravings] \* [external damage bonuses] \* [tripods]</em>
+
+<dmgCalc /> -->
 
 ## **Source**
 
