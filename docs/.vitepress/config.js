@@ -10,7 +10,7 @@ export default {
   themeConfig: {
     nav: nav(),
     lastUpdatedText: 'Updated Date',
-    logo: '/pink pheon.webp',
+    logo: '/pinkpheon.webp',
     // socials
     socialLinks: [
       { icon: 'github', link: 'https://github.com/s21Deniss/lostarkNotes' },
