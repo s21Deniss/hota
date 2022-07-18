@@ -3,9 +3,14 @@ export default {
   description: 'lost ark notes',
   lang: 'en-US',
   lastUpdated: true,
+  head: [
+    ['link', { rel: 'icon', type: 'image/x-icon', href: '/icon.ico' }],
+    // ['link', { rel: 'icon', type: 'image/svg+xml', href: '/path/to/icon.svg' }], for svg
+  ],
   themeConfig: {
     nav: nav(),
     lastUpdatedText: 'Updated Date',
+    logo: '/pink pheon.webp',
     // socials
     socialLinks: [
       { icon: 'github', link: 'https://github.com/s21Deniss/lostarkNotes' },

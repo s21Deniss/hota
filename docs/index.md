@@ -1,6 +1,6 @@
 ---
 layout: home
-
+title: home
 hero:
   name: Lost Ark Notes
   text: Random Lost Ark info
@@ -23,9 +23,3 @@ hero:
 #     title: Simple and minimal, always
 #     details: Lorem ipsum...
 ---
-
-<!-- # Here are some notes for Lost Ark
-
-## Check side bar
-
-### Source code: https://github.com/s21Deniss/lostarkNotes -->
