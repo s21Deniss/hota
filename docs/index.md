@@ -1,14 +1,14 @@
 ---
 layout: home
-title: home
+title: Home
 hero:
   name: Lost Ark Notes
-  text: Random Lost Ark info
-  tagline: I made this for personal use
+  text: "Status: Abandoned"
+  tagline: I quit Lost Ark on 31.12.2022, please check community's
   actions:
     - theme: brand
-      text: Vykas
-      link: /vykas/
+      text: Community
+      link: /links
     - theme: alt
       text: Source code
       link: https://github.com/s21Deniss/lostarkNotes

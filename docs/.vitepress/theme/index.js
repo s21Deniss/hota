@@ -17,6 +17,7 @@ import './tailwind.postcss'
 import DefaultTheme from 'vitepress/theme'
 import Fn from './components/fn.vue'
 import dmgCalc from './components/dmgCalc.vue'
+import LOACalendar from './components/LOACalendar.vue'
 import VPSocialLink from 'vitepress/client/theme-default/components/VPSocialLink.vue'
 import './custom.css'
 
@@ -26,6 +27,7 @@ export default {
     // register global components
     app.component('VPSocialLink', VPSocialLink),
     app.component('Fn', Fn),
+    app.component('LOACalendar', LOACalendar),
     app.component('dmgCalc', dmgCalc)
   }
 }

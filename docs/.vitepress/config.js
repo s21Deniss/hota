@@ -18,6 +18,12 @@ export default {
 
     //sidebar
     sidebar: [
+      {
+        text: 'Community',
+        items: [
+          { text: 'Links', link: '/links' }
+        ]
+      },
       // {
       //   text: 'Argos',
       //   collapsible: true,
@@ -44,6 +50,15 @@ export default {
           { text: 'Gate 3', link: '/vykas/gate3' },
         ]
       },
+      // {
+      //   text: 'Kakul-Saydon',
+      //   collapsible: true,
+      //   items: [
+      //     { text: 'Gate 1', link: '/kakul-saydon/' },
+      //     { text: 'Gate 2', link: '/kakul-saydon/gate2' },
+      //     { text: 'Gate 3', link: '/kakul-saydon/gate3' },
+      //   ]
+      // },
       {
         text: 'Other',
         collapsible: true,
@@ -78,6 +93,7 @@ export default {
 
 function nav() {
   return [
-    { text: 'Welcome Lost ark enjoyers', link: '#' },
+    { text: 'Lost Ark', link: '#', activeMatch: '/' },
+    { text: 'BDO', link: 'https://bdo.s21.dev' },
   ]
 }

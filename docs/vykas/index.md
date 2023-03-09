@@ -18,7 +18,7 @@ time stop
 
 #### Ester
 
-1st use Nineveh on boss with more HP
+1st use Nineveh on boss with more HP (purple most of the time)
 
 #### Positions
 
