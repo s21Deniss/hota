@@ -49,7 +49,7 @@ export default {
 function nav() {
   return [
     { text: 'Hota', link: '#', activeMatch: '/' },
-    { text: 'Lost Ark', link: 'https://lostark.s21.dev/', activeMatch: '/' },
+    { text: 'Lost Ark', link: 'https://lostark.s21.dev/', activeMatch: 'https://lostark.s21.dev/' },
     { text: 'BDO', link: 'https://bdo.s21.dev' },
   ]
 }
