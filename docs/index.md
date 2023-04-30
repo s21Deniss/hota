@@ -2,16 +2,16 @@
 layout: home
 title: Home
 hero:
-  name: Lost Ark Notes
-  text: "Status: Abandoned"
-  tagline: I quit Lost Ark on 31.12.2022, please check community's
+  name: HOTA.s21.dev
+  text: "Welcome"
+  tagline: "Heroes 3: Horn of the Abyss tools"
   actions:
     - theme: brand
-      text: Community
-      link: /links
+      text: Guard calculator
+      link: /guard
     - theme: alt
       text: Source code
-      link: https://github.com/s21Deniss/lostarkNotes
+      link: https://github.com/s21Deniss/hota
 # features:
 #   - icon: ⚡️
 #     title: Vite, The DX that can't be beat
