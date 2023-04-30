@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Guard calculator
-      link: /guard
+      link: /guard/
     - theme: alt
       text: Source code
       link: https://github.com/s21Deniss/hota
