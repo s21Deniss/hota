@@ -4,6 +4,12 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+    inputs:
+      manul:
+        type: string
+        default: trigger
+        required: false
 
 jobs:
   deploy:
