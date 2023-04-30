@@ -18,7 +18,7 @@ git add -A
 git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:s21Deniss/lostarkNotes.git main:gh-pages
+git push -f git@github.com:s21Deniss/hota.git main:gh-pages
 
 
 cd -

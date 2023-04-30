@@ -1,9 +1,9 @@
 {
-  "name": "lostark.s21.dev",
+  "name": "hota.s21.dev",
   "version": "1.0.0",
-  "description": "lost ark notes",
+  "description": "Hota.s21.dev",
   "main": "index.js",
-  "repository": "https://github.com/s21Deniss/lostarkNotes",
+  "repository": "https://github.com/s21Deniss/hota",
   "author": "s21Deniss",
   "license": "MIT",
   "private": false,

@@ -83,7 +83,7 @@ export default {
 
 
     editLink: {
-      pattern: 'https://github.com/s21Deniss/lostarkNotes/edit/main/docs/:path',
+      pattern: 'https://github.com/s21Deniss/hota/edit/main/docs/:path',
       text: 'Edit this page on GitHub'
     }
   }
@@ -93,7 +93,8 @@ export default {
 
 function nav() {
   return [
-    { text: 'Lost Ark', link: '#', activeMatch: '/' },
+    { text: 'Hota', link: '#', activeMatch: '/' },
+    { text: 'Lost Ark', link: 'https://lostark.s21.dev/', activeMatch: '/' },
     { text: 'BDO', link: 'https://bdo.s21.dev' },
   ]
 }

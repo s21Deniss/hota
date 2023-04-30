@@ -1,6 +1,6 @@
-# Repository for lostark.s21.dev
+# Repository for hota.s21.dev
 
-Hosted version https://lostark.s21.dev/
+Hosted version https://hota.s21.dev/
 
 ## Build locally
 
