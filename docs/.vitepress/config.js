@@ -4,7 +4,7 @@ export default {
   lang: 'en-US',
   lastUpdated: true,
   head: [
-    ['link', { rel: 'icon', type: 'image/x-icon', href: '/pinkpheon.webp' }],
+    ['link', { rel: 'icon', type: 'image/x-icon', href: '/spriteIcon.webp' }],
     // ['link', { rel: 'icon', type: 'image/svg+xml', href: '/path/to/icon.svg' }], for svg
   ],
   themeConfig: {
