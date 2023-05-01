@@ -1,5 +1,6 @@
 ---
 title: HOTA guard calc
+layout: page
 ---
 
 # Guard calc
