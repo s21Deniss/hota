@@ -18,7 +18,7 @@ import DefaultTheme from 'vitepress/theme'
 // import Fn from './components/fn.vue'
 // import dmgCalc from './components/dmgCalc.vue'
 // import LOACalendar from './components/LOACalendar.vue'
-import guardCalc from './components/guardCalc.vue'
+import GuardCalc from './components/GuardCalc.vue'
 import VPSocialLink from 'vitepress/client/theme-default/components/VPSocialLink.vue'
 import './custom.css'
 
@@ -27,7 +27,7 @@ export default {
   enhanceApp({ app }) {
     // register global components
     app.component('VPSocialLink', VPSocialLink),
-    app.component('guardCalc', guardCalc)
+    app.component('GuardCalc', GuardCalc)
     // app.component('Fn', Fn),
     // app.component('LOACalendar', LOACalendar),
     // app.component('dmgCalc', dmgCalc)
