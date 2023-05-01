@@ -4,10 +4,10 @@ import { ref,computed,onMounted  } from 'vue'
 import monsterData from '../../../public/monsters.json'
 
 const data = ref(null)
-
+const mobData = JSON.parse(monsterData)
 
 onMounted(() => {
-console.log(monsterData)
+console.log(mobData)
 console.log('mounted')
 })
 </script>
