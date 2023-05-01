@@ -1,9 +1,10 @@
 <script setup>
 import { ref,computed,onMounted  } from 'vue'
 
-
+import monsterData from '../../../public/monsters.json'
 
 const data = ref(null);
+
 
 
 onMounted(() => {
@@ -18,7 +19,7 @@ console.log('mounted')
         <!-- {{data}} -->
         <!-- Component Start -->
         <!-- Component End  -->
-        <pre>{{data}}</pre>
+        <pre>{{monsterData}}</pre>
     </div>
 
   </div>

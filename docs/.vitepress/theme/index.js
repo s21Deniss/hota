@@ -27,7 +27,7 @@ export default {
   enhanceApp({ app }) {
     // register global components
     app.component('VPSocialLink', VPSocialLink),
-    app.component('guardCalc', guardCalc),
+    app.component('guardCalc', guardCalc)
     // app.component('Fn', Fn),
     // app.component('LOACalendar', LOACalendar),
     // app.component('dmgCalc', dmgCalc)
