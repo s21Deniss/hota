@@ -10,7 +10,7 @@ export default {
   themeConfig: {
     nav: nav(),
     lastUpdatedText: 'Updated Date',
-    logo: '/pinkpheon.webp',
+    logo: '/spriteIcon.webp',
     // socials
     socialLinks: [
       { icon: 'github', link: 'https://github.com/s21Deniss/hota' },
