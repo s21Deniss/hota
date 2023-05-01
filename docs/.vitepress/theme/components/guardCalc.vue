@@ -6,7 +6,6 @@ import monsterData from '../../../public/monsters.json'
 const data = ref(null);
 
 
-
 onMounted(() => {
 console.log('mounted')
 })
