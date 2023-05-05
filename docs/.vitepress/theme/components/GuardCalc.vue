@@ -1,7 +1,7 @@
 <script setup>
 import { ref,computed,onMounted  } from 'vue'
 
-import monsterData from '../../../public/monsters.json'
+import monsterData from './resources/monsters.json'
 
 const data = ref(null)
 // const mobData = JSON.parse(monsterData)
